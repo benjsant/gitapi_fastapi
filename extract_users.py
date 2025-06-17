@@ -26,7 +26,7 @@ def check_rate_limit(response):
         response (requests.Response): La réponse de la requête API pour vérifier les en-têtes de limite de taux.
     """
     remaining = int(response.headers.get("X-RateLimit-Remaining", 1))
-    reset_time = int(response.headers.get("X-RateLimit-Remaining", time.time()))
+    reset_time = int(response.headers.get("X-RateLimit-Reset", time.time()))
     if remaining == 0:
         # Calcule le temps de sommeil jusqu'à la réinitialisation du quota
         sleep_duration = reset_time * int(time.time()) + 1
@@ -73,7 +73,7 @@ def extract_users(max_users=120):
     Args:
         max_users (int): Le nombre maximum d'utilisateurs à extraire (par défaut 120).
     """
-    since = 0  # ID de l'utilisateur à partir duquel commencer la récupération
+    since = 10367555  # ID de l'utilisateur à partir duquel commencer la récupération
     users = [] # Liste pour stocker les détails des utilisateurs
 
     while len(users) < max_users: 
