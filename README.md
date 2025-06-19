@@ -279,12 +279,9 @@ Les tests couvrent :
     
 - `python-dotenv`
     
-- `pydantic`
-    
 - `pytest`
     
 - `httpx`
-    
 
 * * *
 
