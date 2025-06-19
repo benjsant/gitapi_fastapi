@@ -29,7 +29,7 @@ def check_rate_limit(response):
     reset_time = int(response.headers.get("X-RateLimit-Reset", time.time()))
     if remaining == 0:
         # Calcule le temps de sommeil jusqu'à la réinitialisation du quota
-        sleep_duration = reset_time * int(time.time()) + 1
+        sleep_duration = max(0, reset_time - int(time.time())) + 1
         print(f"Quota atteint. Pause de {sleep_duration} secondes.")
         time.sleep(sleep_duration)
 
