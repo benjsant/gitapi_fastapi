@@ -151,6 +151,15 @@ Ici je vais vous montrer comment récupérer des valeurs à l'aides des différe
 2.  Avec l'outil **[Postman](https://www.postman.com/downloads/)** ou **[Bruno](https://www.usebruno.com/)**
 3.  Avec l'interface **Swagger** dans http://localhost:8000/docs avec l'option "**Try it out**" de la requête
 
+> ⚠️ Si vous êtes sur Windows, il vaut mieux que vous utilisez le **GitBash** pour les commandes curl ou utilisez spécifiquement **curl.exe** dans votre powershell.
+
+> Je précise également que le **GitBash** est installé par défaut lorque vous installez git. 
+
+exemple powershell avec **curl.exe**:
+```powershell
+curl.exe -u admin:admin123 "http://localhost:8000/users"
+```
+
 ### 🔍 GET /users
 
 Retourne la liste complète des utilisateurs filtrés.
